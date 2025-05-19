@@ -5,18 +5,25 @@ $url = 'http://localhost/trabalho/';
 require_once('topo/conexao.php');
 require_once('classes/pessoa.php');
 
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    var_dump($conn);
+    $cliente = new Pessoa($conn);
+
+    $cliente->setnome_pessoa($_POST['nome_pessoa']);
+    $cliente->setemail_pessoa($_POST['email_pessoa']);
+    $cliente->setcpf_pessoa($_POST['cpf_pessoa']);
+    $cliente->setsenha_pessoa($_POST['senha_pessoa']);
+    $cliente->settelefone_pessoa($_POST['telefone_pessoa']);
+    $cliente->insert();
+    $_SESSION['logado'] = true;
+}
 if ($_SESSION['logado']) {
     header('location: index.php');
- }
- 
- if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $cliente = new Pessoa($conn);
-    $cliente->setemail_pessoa($_POST['email_pessoa']);
-    $cliente->setsenha_pessoa($_POST['senha_pessoa']);
-    $cliente->logar();
- }
+    $_SESSION['logado'] = false;
+}
 
 ?>
+
 <!DOCTYPE html>
 <html>
 <html lang="pt-br">
@@ -25,7 +32,7 @@ if ($_SESSION['logado']) {
     <meta charset='utf-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
 
-    <title>Login</title>
+    <title>Cadastro</title>
 
     <!-- links de fontes -->
 
@@ -49,35 +56,50 @@ if ($_SESSION['logado']) {
     <!-- links de arquivos -->
 
     <link rel="stylesheet" href="css/principal.css">
-    <link rel='stylesheet' type='text/css' media='screen' href='css/loginpg.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/contacreatepg.css'>
     <script async defer src='js/home.js'></script>
 
 </head>
 
 <body>
+
     <div class="peixes">
         <video src="imagens/peixes2.mp4" autoplay muted loop></video>
     </div>
 
+    <a class="dada">CADASTRO</a>
+
     <section class="page1">
-        <a class="dada">LOGIN</a>
         <form action="" method="post" name="form" enctype="multipart/form-data">
             <div class="login">
                 <div class="usuario">
-                    <input type="text" name="email_pessoa" placeholder="Email" autofocus>
+                    <input type="text" name="nome_pessoa" placeholder="Nome de usuário " autofocus>
                 </div>
+
+                <div class="email">
+                    <input type="text" name="email_pessoa" placeholder="Informe seu email " autofocus>
+                </div>
+
+                <div class="cpf">
+                    <input type="text" name="cpf_pessoa" placeholder="Informe seu CPF " autofocus>
+                </div>
+
                 <div class="senha">
-                    <input type="password" name="senha_pessoa" placeholder="Sua senha" autofocus>
+                    <input type="password" name="senha_pessoa" placeholder="Sua senha " autofocus>
                 </div>
+
+                <div class="telefone">
+                    <input type="text" name="telefone_pessoa" placeholder="Seu telefone " autofocus>
+                </div>
+
                 <div class="entrar">
-                    <a href="index.html">
-                        <button class="botao" name="login">Entrar</button>
-                    </a>
+                    <button class="botao" name="register">Criar conta</button>
                 </div>
-                <a class="m1" href="contacreatepg.html">Criar conta?</a>
             </div>
         </form>
     </section>
+
+
 </body>
 
 </html>

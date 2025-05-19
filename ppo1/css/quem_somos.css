@@ -61,26 +61,26 @@ body {
 }
 
 .foto1 {
-    background-image: url("/imagens/w.jpeg");
+    background-image: url("imagens/w.jpeg");
     background-size: cover;
-    height: 250px;
-    width: 250px;
+    height: 100px;
+    width: 100px;
     margin: 0 auto;
 }
 
 .foto2 {
-    background-image: url("/imagens/j.jpg");
+    background-image: url("imagens/j.jpg");
     background-size: cover;
-    height: 250px;
-    width: 250px;
+    height: 100px;
+    width: 100px;
     margin: 0 auto;
 }
 
 .foto3 {
-    background-image: url("/imagens/rianzin222.jpg");
+    background-image: url("imagens/rianzin222.jpg");
     background-size: cover;
-    height: 250px;
-    width: 250px;
+    height: 100px;
+    width: 100px;
     margin: 0 auto;
 }
 

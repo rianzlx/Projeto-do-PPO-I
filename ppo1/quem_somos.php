@@ -1,3 +1,4 @@
+<php?></php>
 <!DOCTYPE html>
 <html>
 <html lang="pt-br">
@@ -40,7 +41,7 @@
 
 		<div class="barra_de_pesquisa">
 			<input placeholder="Pesquise aqui" class="texto_da_pesquisa">
-			<img class="icone" src="/imagens/lupa.png">
+			<img class="icone" src="imagens/lupa.png">
 		</div>
 	</header>
     

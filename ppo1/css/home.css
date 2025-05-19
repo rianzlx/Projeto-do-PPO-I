@@ -27,7 +27,7 @@ header {
 	margin-top: 0;
 }
 
-  .projetos-recomendados {
+.projetos-recomendados {
 	display: grid;
 	grid-template-columns: 190px 260px;
 	grid-template-rows: 190px 260px;
