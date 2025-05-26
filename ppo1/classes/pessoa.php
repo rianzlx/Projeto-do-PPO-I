@@ -58,8 +58,9 @@ class Pessoa
             return;
         }
 
+        // Query SQL para inserção
         $sql = "INSERT INTO pessoa (nome_pessoa, email_pessoa, cpf_pessoa, senha_pessoa, telefone_pessoa) 
-            VALUES (:nome_pessoa, :email_pessoa, :cpf_pessoa, :senha_pessoa, :telefone_pessoa)";
+                VALUES (:nome_pessoa, :email_pessoa, :cpf_pessoa, :senha_pessoa, :telefone_pessoa)";
 
         try {
             $stmt = $this->conn->prepare($sql);
@@ -71,9 +72,9 @@ class Pessoa
             $stmt->bindParam(':telefone_pessoa', $this->telefone_pessoa);
 
             if ($stmt->execute()) {
-                echo "Pessoa inserida com sucesso!<br>";
+                echo "Pessoa física inserida com sucesso!<br>";
             } else {
-                echo "Erro ao inserir Pessoa!<br>";
+                echo "Erro ao inserir Pessoa física!<br>";
             }
         } catch (PDOException $e) {
             echo "Erro: " . $e->getMessage();

@@ -1,0 +1,27 @@
+#tittle input{
+    width: 300px; /* você pode usar % ou outras unidades */
+    height: 40px; /* para aumentar a altura também */
+    font-size: 19px;
+}
+#autor input{
+    width: 300px; /* você pode usar % ou outras unidades */
+    height: 40px; /* para aumentar a altura também */
+    font-size: 19px;
+
+}
+#description{
+    font-size: 15px;  
+} 
+label{
+   
+}
+#pute{
+  
+   
+}
+body{
+    display: grid;
+    place-items: center;
+    height: 70vh;
+    background-color: #578FCA;
+}

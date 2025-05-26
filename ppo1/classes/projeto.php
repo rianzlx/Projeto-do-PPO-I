@@ -5,7 +5,7 @@ class Projeto
     private $id_projeto;
     private $titulo_projeto;
     private $descricao_projeto;
-    private $arquivo_projeto; // Alterado de img_projeto
+    private $arquivo_projeto;
 
     // Construtor
     public function __construct($connp)
@@ -17,7 +17,7 @@ class Projeto
         }
     }
 
-    // Setters
+    // Métodos Setters
     public function setid_projeto($id_projeto)
     {
         $this->id_projeto = $id_projeto;
@@ -33,7 +33,7 @@ class Projeto
         $this->descricao_projeto = $descricao_projeto;
     }
 
-    public function setarquivo_projeto($arquivo_projeto) // Nome atualizado
+    public function setarquivo_projeto($arquivo_projeto)
     {
         $this->arquivo_projeto = $arquivo_projeto;
     }
@@ -46,14 +46,14 @@ class Projeto
         }
 
         $sql = "INSERT INTO projeto (titulo_projeto, descricao_projeto, arquivo_projeto) 
-                VALUES (:titulo_projeto, :descricao_projeto, :arquivo_projeto)";
+            VALUES (:titulo_projeto, :descricao_projeto, :arquivo_projeto)";
 
         try {
             $stmt = $this->conn->prepare($sql);
 
             $stmt->bindParam(':titulo_projeto', $this->titulo_projeto);
             $stmt->bindParam(':descricao_projeto', $this->descricao_projeto);
-            $stmt->bindParam(':arquivo_projeto', $this->arquivo_projeto); // Corrigido aqui
+            $stmt->bindParam(':arquivo_projeto', $this->arquivo_projeto);
 
             if ($stmt->execute()) {
                 echo "Projeto inserido com sucesso!<br>";

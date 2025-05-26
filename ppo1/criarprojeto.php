@@ -1,19 +1,23 @@
+
 <?php
+
 error_reporting(E_ALL ^ E_WARNING);
 session_start();
-$url = 'http://localhost/trabalho/';
 require_once('topo/conexao.php');
 require_once('classes/projeto.php');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    var_dump($conn);
     $projeto = new Projeto($conn);
 
     $projeto->settitulo_projeto($_POST['titulo_projeto']);
     $projeto->setdescricao_projeto($_POST['descricao_projeto']);
-    $projeto->setarquivo_projeto($_POST['arquivo_projeto']); // Corrigido
-
+    $projeto->setarquivo_projeto($_POST['arquivo_projeto']);
     $projeto->insert();
+  
 }
+
+
 ?>
 <html>
 <head>
