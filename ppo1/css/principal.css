@@ -2,40 +2,41 @@
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
 }
 
 body {
-	height: 150vh;
-	width: 100%;
-	background-color: #0F6292;
+  height: 150vh;
+  width: 100%;
+  background-color: #0F6292;
   /* overflow: hidden; */
 }
 
 body::-webkit-scrollbar {
-	background-color: transparent;
-	width: .625rem;
+  background-color: transparent;
+  width: .625rem;
 }
 
 body::-webkit-scrollbar-track {
-	background-color: black;
+  background-color: black;
 }
 
 body::-webkit-scrollbar-thumb {
-	background-color: white;
-	border-radius: 1.25rem;
+  background-color: white;
+  border-radius: 1.25rem;
 }
 
 a {
-	text-decoration: none;
-	color: white;
+  text-decoration: none;
+  color: white;
 }
 
 li {
-	margin: 0 2rem;
-  }
+  margin: 0 2rem;
+}
 
 header {
   position: fixed;
@@ -48,9 +49,10 @@ header {
   align-items: center;
   opacity: 80%;
   z-index: 999999999999999;
+  color: #FFF;
 }
 
-header > nav > ul {
+header>nav>ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -61,16 +63,7 @@ header > nav > ul {
   text-transform: uppercase;
 }
 
-header {
-  display: flex;
-  align-items: center;
-  padding: 1em;
-  background-color: #000;
-  color: #FFF;
-  justify-content: space-between;
-}
-
-li{
+li {
   transition: .5s ease;
 }
 
@@ -81,11 +74,10 @@ li:hover {
 
 .barra_de_pesquisa {
   height: 3rem;
-  width: 25rem;
-
+  width: 100%;
+  max-width: 40rem;
   border-radius: 2.5rem;
   background-color: #FFF;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -101,8 +93,6 @@ li:hover {
   padding-left: 1rem;
   font-family: "Poppins", sans-serif;
   font-weight: 400;
-  text-decoration: none;
-  text-decoration: none;
 }
 
 .icone {
@@ -111,6 +101,11 @@ li:hover {
 }
 
 .texto_da_pesquisa::-webkit-input-placeholder {
-font-family: "Poppins", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 400;
+}
+
+.perfil {
+  background-image: url("imagens/user.png");
+  color: black;
 }

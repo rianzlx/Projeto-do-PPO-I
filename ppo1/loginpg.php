@@ -4,16 +4,24 @@ session_start();
 $url = 'http://localhost/trabalho/';
 require_once('topo/conexao.php');
 require_once('classes/pessoa.php');
+require_once('classes/empresa.php');
 
-if ($_SESSION['logado']) {
-    header('location: index.php');
- }
+// if ($_SESSION['logado']) {
+//     header('location: index.php');
+//  }
  
  if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $cliente = new Pessoa($conn);
     $cliente->setemail_pessoa($_POST['email_pessoa']);
     $cliente->setsenha_pessoa($_POST['senha_pessoa']);
     $cliente->logar();
+ }
+
+ if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $empresa = new Empresa($conn);
+    $empresa->setemail_empresa($_POST['email_empresa']);
+    $empresa->setsenha_empresa($_POST['senha_empresa']);
+    $empresa->logar();
  }
 
 ?>
@@ -74,7 +82,7 @@ if ($_SESSION['logado']) {
                         <button class="botao" name="login">Entrar</button>
                     </a>
                 </div>
-                <a class="m1" href="contacreatepg.html">Criar conta?</a>
+                <a class="m1" href="cadastropg.php">Criar conta?</a>
             </div>
         </form>
     </section>

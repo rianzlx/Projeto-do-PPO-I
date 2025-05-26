@@ -111,3 +111,14 @@ body {
     margin-top: 20px;
     flex-direction: column;
 }
+
+.barra_de_pesquisa {
+    height: 3rem;
+    width: 25rem;
+    max-width: 40rem;
+    border-radius: 2.5rem;
+    background-color: #FFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }

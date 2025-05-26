@@ -1,68 +1,4 @@
-
-
-
-
-
-
-<?php
-require_once('topo/conexao.php');
-require_once('classes/produto_insercao.php');
-
-// Inicializa a sessão, caso ainda não tenha sido iniciada
-if (session_status() == PHP_SESSION_NONE) {
-    session_start();
-}
-
-// Verifica se o método da requisição é POST
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $produto = new Produto($conn);
-    $produto->setnome_produto($_POST['nome_produto']);
-    $produto->setpreco_produto($_POST['preco_produto']);
-
-    // Se a operação for de edição, executa a atualização
-    if ($_REQUEST['opt'] === 'edi') {
-        $id_produto = $_REQUEST['id'];
-        $produto->setid_produto($id_produto);
-        $produto->update('img_produto');
-    } else {
-        // Se for para adicionar um novo produto, executa a inserção
-        $produto->insert('img_produto');
-    }
-}
-
-// Caso a operação seja edição, carrega os dados do produto
-$produto = new Produto($conn);
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $produto->setnome_produto($_POST['nome_produto']);
-    $produto->setpreco_produto($_POST['preco_produto']);
-
-    if (isset($_REQUEST['opt']) && $_REQUEST['opt'] === 'edi') {
-        $id_produto = $_REQUEST['id'];
-        $produto->setid_produto($id_produto);
-        $produto->update('img_produto');
-    } else {
-        $produto->insert('img_produto');
-    }
-}
-
-if (isset($_REQUEST['opt']) && $_REQUEST['opt'] === 'edi') {
-    $id = $_REQUEST['id'];
-    $produto->setid_produto($id);
-    $produto->loadEditar();
-
-    $nome_produto = $produto->getnome_produto();
-    $preco_produto = $produto->getpreco_produto();
-    $img_produto = $produto->getimg_produto();
-}
-
-if (isset($_REQUEST['opt']) && $_REQUEST['opt'] === 'del') {
-    $id = $_REQUEST['id'];
-    $produto->setid_produto($id);
-    $produto->delete();
-}
-
-?>
+<!DOCTYPE html>
 <html>
 <html lang="pt-br">
 
@@ -93,21 +29,24 @@ if (isset($_REQUEST['opt']) && $_REQUEST['opt'] === 'del') {
 
   <!-- links de arquivos -->
 
-  <link rel='stylesheet' type='text/css' media='screen' href='css/projetospg.css'>
   <link rel='stylesheet' type='text/css' media='screen' href='css/principal.css'>
-  <script async defer src='/js/home.js'></script>
+  <link rel='stylesheet' type='text/css' media='screen' href='css/projetospg.css'>
+  <script async defer src='js/home.js'></script>
 
 </head>
 
 <body>
   <header>
-    <nav>
-      <ul>
-        <li style="list-style: none;" class="nav-item"><a href="index.html" style="text-decoration: none;">Home</a></li>
-        <li style="list-style: none;" class="nav-item"><a href="quem_somos.html" style="text-decoration: none;">Quem
-            Somos?</a></li>
-      </ul>
-    </nav>
+  <nav>
+				<ul>
+					<li style="list-style: none;" class="nav-item"><a href="index.php"
+							style="text-decoration: none;">Home</a></li>
+					<li style="list-style: none;" class="nav-item"><a href="quem_somos.php"
+							style="text-decoration: none;">Quem Somos?</a></li>
+					<li style="list-style: none;" class="nav-item"><a href="projetospg.php"
+							style="text-decoration: none;">Projetos</a></li>
+				</ul>
+			</nav>
 
     <div class="barra_de_pesquisa">
       <input placeholder="Pesquise aqui" class="texto_da_pesquisa">
@@ -120,7 +59,7 @@ if (isset($_REQUEST['opt']) && $_REQUEST['opt'] === 'del') {
       <div class="image-wrapper">
         <img src="imagens/user.png">
         <div class="overlay">
-          <div class="text"></div>
+          <div class="text">Entre em contato com o autor do projeto no número (99)99999-9999</div>
         </div>
       </div>
       <div class="desc">PROJETO 1</div>
@@ -130,7 +69,7 @@ if (isset($_REQUEST['opt']) && $_REQUEST['opt'] === 'del') {
       <div class="image-wrapper">
         <img src="imagens/user.png">
         <div class="overlay">
-          <div class="text"></div>
+          <div class="text">Entre em contato com o autor do projeto no número (99) 9 9999-9999</div>
         </div>
       </div>
       <div class="desc">PROJETO 2</div>
@@ -140,7 +79,7 @@ if (isset($_REQUEST['opt']) && $_REQUEST['opt'] === 'del') {
       <div class="image-wrapper">
         <img src="imagens/user.png">
         <div class="overlay">
-          <div class="text"></div>
+          <div class="text">Entre em contato com o autor do projeto no número (99) 9 9999-9999</div>
         </div>
       </div>
       <div class="desc">PROJETO 3</div>
@@ -150,7 +89,7 @@ if (isset($_REQUEST['opt']) && $_REQUEST['opt'] === 'del') {
       <div class="image-wrapper">
         <img src="imagens/user.png">
         <div class="overlay">
-          <div class="text"></div>
+          <div class="text">Entre em contato com o autor do projeto no número (99) 9 9999-9999</div>
         </div>
       </div>
       <div class="desc">PROJETO 4</div>
@@ -161,7 +100,7 @@ if (isset($_REQUEST['opt']) && $_REQUEST['opt'] === 'del') {
       <div class="image-wrapper">
         <img src="imagens/user.png">
         <div class="overlay">
-          <div class="text"></div>
+          <div class="text">Entre em contato com o autor do projeto no número (99) 9 9999-9999</div>
         </div>
       </div>
       <div class="desc">PROJETO 5</div>
@@ -171,7 +110,7 @@ if (isset($_REQUEST['opt']) && $_REQUEST['opt'] === 'del') {
       <div class="image-wrapper">
         <img src="imagens/user.png">
         <div class="overlay">
-          <div class="text"></div>
+          <div class="text">Entre em contato com o autor do projeto no número (99) 9 9999-9999</div>
         </div>
       </div>
       <div class="desc">PROJETO 6</div>
@@ -179,9 +118,9 @@ if (isset($_REQUEST['opt']) && $_REQUEST['opt'] === 'del') {
   
     <div class="gallery">
       <div class="image-wrapper">
-        <img  src="<?= $url ?>arquivo/<?= $img_produto ?>" >
+        <img src="imagens/user.png">
         <div class="overlay">
-          <div class="text">/div>
+          <div class="text">Entre em contato com o autor do projeto no número (99) 9 9999-9999</div>
         </div>
       </div>
       <div class="desc">PROJETO 7</div>
@@ -191,7 +130,7 @@ if (isset($_REQUEST['opt']) && $_REQUEST['opt'] === 'del') {
       <div class="image-wrapper">
         <img src="imagens/user.png">
         <div class="overlay">
-          <div class="text"></div>
+          <div class="text">Entre em contato com o autor do projeto no número (99) 9 9999-9999</div>
         </div>
       </div>
       <div class="desc">PROJETO 8</div>
@@ -202,7 +141,7 @@ if (isset($_REQUEST['opt']) && $_REQUEST['opt'] === 'del') {
       <div class="image-wrapper">
         <img src="imagens/user.png">
         <div class="overlay">
-          <div class="text"></div>
+          <div class="text">Entre em contato com o autor do projeto no número (99) 9 9999-9999</div>
         </div>
       </div>
       <div class="desc">PROJETO 9</div>
@@ -212,7 +151,7 @@ if (isset($_REQUEST['opt']) && $_REQUEST['opt'] === 'del') {
       <div class="image-wrapper">
         <img src="imagens/user.png">
         <div class="overlay">
-          <div class="text"></div>
+          <div class="text">Entre em contato com o autor do projeto no número (99) 9 9999-9999</div>
         </div>
       </div>
       <div class="desc">PROJETO 10</div>
@@ -222,7 +161,7 @@ if (isset($_REQUEST['opt']) && $_REQUEST['opt'] === 'del') {
       <div class="image-wrapper">
         <img src="imagens/user.png">
         <div class="overlay">
-          <div class="text"></div>
+          <div class="text">Entre em contato com o autor do projeto no número (99) 9 9999-9999</div>
         </div>
       </div>
       <div class="desc">PROJETO 11</div>
@@ -232,7 +171,7 @@ if (isset($_REQUEST['opt']) && $_REQUEST['opt'] === 'del') {
       <div class="image-wrapper">
         <img src="imagens/user.png">
         <div class="overlay">
-          <div class="text"></div>
+          <div class="text">Entre em contato com o autor do projeto no número (99) 9 9999-9999</div>
         </div>
       </div>
       <div class="desc">PROJETO 12</div>

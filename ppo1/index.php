@@ -32,7 +32,7 @@
 
 		<link rel="stylesheet" href="css/principal.css">
 		<link rel='stylesheet' type='text/css' media='screen' href='css/home.css'>
-		<script async defer src='/js/home.js'></script>
+		<script async defer src='js/home.js'></script>
 
 	</head>
 
@@ -44,21 +44,29 @@
 							style="text-decoration: none;">Home</a></li>
 					<li style="list-style: none;" class="nav-item"><a href="quem_somos.php"
 							style="text-decoration: none;">Quem Somos?</a></li>
-					<ol>Perfil
-						<li></li>
-					</ol>
+					<li style="list-style: none;" class="nav-item"><a href="projetospg.php"
+							style="text-decoration: none;">Projetos</a></li>
 				</ul>
 			</nav>
 
-			<div class="barra_de_pesquisa">
+			<!-- <div class="barra_de_pesquisa">
 				<input placeholder="Pesquise aqui" class="texto_da_pesquisa">
 				<img class="icone" src="imagens/lupa.png">
-			</div>
+			</div> -->
+
+			<ul class="perfil">
+				<li></li>
+				<li></li>
+			</ul>
 		</header>
 
 		<section class="fishing">
 			<h1 class="title">FISHING</h1>
 			<h2 class="subtitle">Aqui sua ideia vira realidade</h2>
+			<div class="barra_de_pesquisa">
+				<input placeholder="Pesquise aqui" class="texto_da_pesquisa">
+				<img class="icone" src="imagens/lupa.png">
+			</div>
 		</section>
 
 		<!-- PROJETOS RECOMENDADOS -->

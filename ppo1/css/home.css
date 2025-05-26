@@ -1,5 +1,6 @@
 header {
-	background-color: #0F6292;;
+	background-color: #0F6292;
+	;
 }
 
 .fishing {
@@ -9,22 +10,33 @@ header {
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
+	text-align: center;
 }
 
 .title {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	color: white;
 	font-family: "DM Serif Display", serif;
 	font-weight: 400;
 	font-size: 10rem;
 	margin-bottom: 0;
+	text-align: center;
+	width: 100%;
+	max-width: 100%;
 }
 
 .subtitle {
 	color: white;
 	font-family: "Poppins", sans-serif;
-  	font-weight: 400;
+	font-weight: 400;
 	font-size: 30px;
 	margin-top: 0;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .projetos-recomendados {
@@ -49,25 +61,25 @@ div.gallery {
 	float: left;
 	width: 180px;
 	transition: 0.5s;
-  }
-  
-  div.gallery:hover {
-	transform: scale(1.1); 
-  }
-  
-  div.gallery img {
+}
+
+div.gallery:hover {
+	transform: scale(1.1);
+}
+
+div.gallery img {
 	width: 100%;
 	height: auto;
-  }
-  
-  div.desc {
+}
+
+div.desc {
 	padding: 15px;
 	text-align: center;
 	font-family: "Poppins", sans-serif;
-  }
+}
 
 
-  .recomendacoes {
+.recomendacoes {
 	position: absolute;
 	color: white;
 	font-family: "DM Serif Display", serif;
@@ -87,8 +99,8 @@ div.gallery {
 	z-index: 9999999999;
 	font-family: "Poppins", sans-serif;
 }
-  
-  .projetos::after {
+
+.projetos::after {
 	content: '';
 	position: absolute;
 	width: 100%;
@@ -96,15 +108,15 @@ div.gallery {
 	height: 2px;
 	bottom: 0;
 	left: 0;
-	background-color: 	black;
+	background-color: black;
 	transform-origin: bottom right;
 	transition: transform 0.25s ease-out;
-  }
-  
-  .projetos:hover::after {
+}
+
+.projetos:hover::after {
 	transform: scaleX(1);
 	transform-origin: bottom left;
-  }
+}
 
 
 .zika {
@@ -160,6 +172,7 @@ p {
 	padding-right: 100px;
 	font-family: "Poppins", sans-serif;
 }
+
 /* .img {
 	position: absolute;
 	background-image: url("2.jpg");
